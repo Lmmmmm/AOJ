@@ -1,0 +1,16 @@
+{
+    "files.associations": {
+        "*.json": "cpp",
+        "__config": "cpp",
+        "algorithm": "cpp",
+        "cstring": "cpp",
+        "initializer_list": "cpp",
+        "ios": "cpp",
+        "iostream": "cpp",
+        "istream": "cpp",
+        "ostream": "cpp",
+        "streambuf": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp"
+    }
+}
