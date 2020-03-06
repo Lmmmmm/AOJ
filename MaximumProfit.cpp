@@ -1,13 +1,18 @@
 #include<iostream>
 #include<algorithm>
+#include<limits.h>
 
 using namespace std;
 
 static const int MAX = 200000;
 
+/*
+原本需要双for来找maxv和R[j]-R[i]的最大值,这里使用maxv和minv来记录,复杂度从O(n^2)到O(n)
+*/
 int main() {
     int R[MAX], n;
     
+    cin >> n;
     for(int i = 0; i < n; i++) cin >> R[i];
 
     int maxv = INT_MIN;
@@ -21,5 +26,4 @@ int main() {
     cout << maxv << endl;
 
     return 0;
-
 }
