@@ -1,27 +1,16 @@
 #include <cmath>
 #include <iomanip>
 #include <iostream>
+#include <limits>
 using namespace std;
 
-int N;
-void dfs(string s, char mx)
-{
-    if (s.length() == N)
-    {
-        printf("%s\n", s.c_str());
-    }
-    else
-    {
-        for (char c = 'a'; c <= mx; c++)
-        {
-            dfs(s + c, ((c == mx) ? (char)(mx + 1) : mx));
-        }
-    }
-}
 int main()
-{
-    cin >> N;
-    dfs("", 'a');
-
+{   
+    long double l;
+    cin >> l;
+    long double ans;
+    if( (int)l %3 != 0) ans = l/3.0* (l/3.0-3.3621e-4932)*(l/3.0+3.3621e-4932);
+    else ans = pow(l/3.0,3);
+    cout << ans <<endl;
     return 0;
 }
