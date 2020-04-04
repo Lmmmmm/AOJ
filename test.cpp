@@ -6,11 +6,23 @@ using namespace std;
 
 int main()
 {   
-    long double l;
-    cin >> l;
-    long double ans;
-    if( (int)l %3 != 0) ans = l/3.0* (l/3.0-3.3621e-4932)*(l/3.0+3.3621e-4932);
-    else ans = pow(l/3.0,3);
-    cout << ans <<endl;
+    int k;
+    cin >>k;
+
+    int cnt = 1;
+    long res = 1;
+    if(k <= 10) cout << k <<endl;
+
+// 15 > 9
+// 15 -> 6
+
+    while(k >= 9*cnt){
+        k -= 9*cnt;
+        cnt++;
+        res *= 10;
+    }
+    cout << res << " " << cnt<<endl;
+// 2000 3  2100 2101 2102 2103
+    res *= k / cnt;
     return 0;
 }
