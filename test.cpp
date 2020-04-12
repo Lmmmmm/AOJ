@@ -2,27 +2,25 @@
 #include <iomanip>
 #include <iostream>
 #include <limits>
+#include <algorithm> 
 using namespace std;
 
 int main()
 {   
-    int k;
-    cin >>k;
-
-    int cnt = 1;
-    long res = 1;
-    if(k <= 10) cout << k <<endl;
-
-// 15 > 9
-// 15 -> 6
-
-    while(k >= 9*cnt){
-        k -= 9*cnt;
-        cnt++;
-        res *= 10;
+    int n;
+    cin >> n;
+    string s;
+    cin >> s;
+    long long cnt = 0;
+    for(int i = 0; i <= n-3; i++){
+        for(int j = i+1; j<= n-2; j++){
+            if(s[i] == s[j]) continue;
+            for(int k = j+1; k <= n-1 ; k++ ){
+                if(s[j] == s[k] || s[i] == s[k] || j-i == k-j)continue;
+                cnt++;
+            }
+        }
     }
-    cout << res << " " << cnt<<endl;
-// 2000 3  2100 2101 2102 2103
-    res *= k / cnt;
+    cout << cnt << endl;
     return 0;
 }
